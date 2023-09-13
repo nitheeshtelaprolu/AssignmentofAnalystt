@@ -1,0 +1,36 @@
+public class FlipkartLogin {
+
+	public static void main(String[] args) {
+		
+		//to read input values from keyboard
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the mobile number");
+		String num=sc.nextLine();
+		System.out.println("Enter the password");
+		String pwd=sc.next();
+		sc.close();
+		
+		
+		//to open web driver
+		WebDriver driver = new ChromeDriver();
+		
+		//to navigate to Facebook
+		driver.get("https://www.facebook.com/");
+		
+		//to maximize the window
+		driver.manage().window().maximize();
+		
+		//to enter mobile number 
+		driver.findElement(By.id("email")).sendKeys(num);
+		
+		//to enter the password
+		driver.findElement(By.name("pass")).sendKeys(pwd);
+		
+		//to click on login button
+		driver.findElement(By.name("login")).click();
+		
+		
+
+	}
+
+}
